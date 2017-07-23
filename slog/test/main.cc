@@ -5,7 +5,7 @@
 * Email : zhangtianjiu@vip.qq.com
 *******************************************/
 
-#include "slog.h"
+#include "slog/slog.h"
 
 
 int main(int argc, char ** argv) {

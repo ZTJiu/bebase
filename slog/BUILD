@@ -3,6 +3,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "slog",
     includes = ["include"],
+    hdrs = ["include"],
     copts = [
         "-g",
         "-O2",
@@ -15,7 +16,7 @@ cc_library(
     nocopts = "-fPIC",
     linkstatic = 1,
     srcs = glob([
-        "include/*.h",
+        "src/slog/*.cc"
     ]),
     deps = [
         "@third_party//log4cplus-200-rc1",
@@ -35,7 +36,6 @@ cc_test(
         "-lrt",
     ],
     srcs = [
-        "include/slog.h",
         "test/main.cc",
     ],
     deps = [
