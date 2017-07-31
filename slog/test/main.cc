@@ -9,6 +9,7 @@
 
 
 int main(int argc, char ** argv) {
+    Slog::SetLogProperties("./logger.properties");
     LOG_DEBUG("Hello world");
     return 0;
 }

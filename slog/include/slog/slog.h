@@ -65,12 +65,16 @@ public:
         return slogger.Logger();
     }
 
+	static SetLogProperties(const std::string & properties_conf_path) {
+		log4cplus::PropertyConfigurator::doConfigure(properties_conf_path);
+	}
+
 private:
     Slog() {
         log4cplus::BasicConfigurator config;
         config.configure();
-        log4cplus::PropertyConfigurator::doConfigure("./logger.properties");
-        logger_ = log4cplus::Logger::getInstance(LOG4CPLUS_TEXT("main"));
+        //log4cplus::PropertyConfigurator::doConfigure("./logger.properties");
+        logger_ = log4cplus::Logger::getInstance(LOG4CPLUS_TEXT("global"));
     }
     ~Slog() {
         log4cplus::Logger::shutdown();
